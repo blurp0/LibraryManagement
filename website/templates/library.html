@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Library Management{% endblock %}
+
+{% block heading %}
+    <div class="dashboard-header">
+        <h1>Welcome to the Library Management System</h1>
+        <p>Overview of your library and books</p>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="dashboard">
+        <!-- Box for Total Books -->
+        <div class="overview-item">
+            <h3>Total Books in Library</h3>
+            <p>{{ total_books }}</p>
+        </div>
+
+        <!-- Box for Recent Books -->
+        <div class="overview-item">
+            <h3>Books Uploaded Recently</h3>
+            <p>{{ recent_books_count }}</p>
+        </div>
+
+        <!-- Box for Last Added Book -->
+        <div class="overview-item">
+            <h3>Last Added Book</h3>
+            <p>{{ last_added_book.title }} by {{ last_added_book.author }}</p>
+        </div>
+    </div>
+<style>
+    /* General Container for Dashboard */
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Individual Box for Overview Items */
+.dashboard .overview-item {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 200px; /* Fixed width for consistency */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border: 1px solid #ddd; /* Light border for separation */
+    text-align: center;
+}
+
+.dashboard .overview-item h3 {
+    color: #2980b9;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.dashboard .overview-item p {
+    font-size: 22px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    color: #2c3e50;
+    font-size: 36px;
+    margin: 0;
+}
+
+.dashboard-header p {
+    color: #7f8c8d;
+    font-size: 18px;
+}
+
+</style>
+{% endblock %}

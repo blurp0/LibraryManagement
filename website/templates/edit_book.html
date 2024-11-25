@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Book{% endblock %}
+
+{% block heading %}Edit Book Details{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('admin.edit_book', book_id=book.id) }}" method="POST" enctype="multipart/form-data">
+        <label for="title">Book Title</label>
+        <input type="text" id="title" name="title" value="{{ book.title }}" required>
+
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author" value="{{ book.author }}" required>
+
+        <label for="publication_year">Publication Year</label>
+        <input type="number" id="publication_year" name="publication_year" value="{{ book.publication_year }}" required>
+
+        <label for="short_description">Short Description</label>
+        <textarea id="short_description" name="short_description" required>{{ book.short_description }}</textarea>
+
+        <label for="file">Change Book File (Optional)</label>
+        <input type="file" id="file" name="file"> <!-- File input to upload a new book file -->
+
+        <button type="submit">Save Changes</button>
+    </form>
+<style>
+  /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #f4a261;
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+form input[type="file"] {
+    padding: 5px;
+}
+
+form button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+/* Textarea Styles */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    main {
+        padding: 15px;
+        width: 100%;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+</style>
+{% endblock %}

@@ -1,0 +1,100 @@
+/* General styles */
+html, body {
+    font-family: Arial, sans-serif;
+    height: 100%; /* Ensure the body and html elements take full height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack content vertically */
+    color: #333;
+    background-color: #f9f9f9;
+}
+h1, h2, h3 {
+    color: #444;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header styles */
+header {
+    background-color: #333; /* Dark background for the header */
+    color: white;
+    margin: 0;
+    padding: 0.5rem 0; /* Adds consistent spacing around the header */
+}
+
+header nav ul {
+    list-style: none; /* Remove bullets */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Align items horizontally */
+    gap: 1rem; /* Add spacing between buttons */
+    justify-content: center; /* Center align the navigation */
+    align-items: center; /* Vertically center buttons */
+}
+
+header nav ul li {
+    margin: 0; /* Remove any extra space around list items */
+    padding: 0; /* Remove any extra padding */
+}
+
+header nav ul li a {
+    color: white; /* Text color */
+    background-color: #007bff; /* Button background color */
+    padding: 0.5rem 1rem; /* Add padding inside buttons */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Makes the links look like buttons */
+    border: none; /* Remove borders */
+    box-shadow: none; /* Remove any shadow */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+header nav ul li a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #f0f0f0; /* Slightly lighter text on hover */
+}
+
+main {
+    padding: 2rem;
+    width: 100%; /* Full width but within constraints */
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the content horizontally */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Allow it to grow within flex container */
+}
+
+/* For smaller screens, adjust the width */
+@media (max-width: 768px) {
+    main {
+        width: 100%; /* Set width to 90% for smaller screens */
+    }
+}
+
+main h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    height: 5%;
+    width: 100%;
+}
+
